@@ -25,12 +25,18 @@ export default function SigninPage() {
     setPasswordError("");
     setGlobalMsg("");
 
-    const res = await fetch("/api/auth/login", {
-      method: "POST",
-      body: JSON.stringify({ email, password })
-    });
-
-    const data = await res.json().catch(() => ({}));
+    let res, data;
+    try {
+      res = await fetch("/api/auth/login", {
+        method: "POST",
+        body: JSON.stringify({ email, password })
+      });
+      data = await res.json().catch(() => ({}));
+    } catch (err) {
+      setLoading(false);
+      setGlobalMsg("Network error. Please try again.");
+      return;
+    }
 
     setLoading(false);
 
