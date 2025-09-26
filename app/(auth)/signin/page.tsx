@@ -1,10 +1,10 @@
 "use client";
-import { useState } from "react";
+import { useState, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 
 export const dynamic = "force-dynamic";
 
-export default function SigninPage() {
+function SigninForm() {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
 
@@ -140,5 +140,13 @@ export default function SigninPage() {
         )}
       </div>
     </div>
+  );
+}
+
+export default function SigninPage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <SigninForm />
+    </Suspense>
   );
 }
