@@ -7,7 +7,7 @@ import Confetti from "@/components/Confetti";
 import { formatNumber } from "@/lib/number";
 
 const GOAL = 10_000_000; // 1 crore
-const SAVE_INTERVAL_MS = 1000;
+const SAVE_INTERVAL_MS = 500;
 
 type ProgressPayload = { mantra: string; count: number } | null;
 
