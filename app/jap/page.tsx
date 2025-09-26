@@ -316,10 +316,22 @@ export default function JapPage() {
 
         <CountBar count={count} goal={GOAL} />
 
-        <div className="mt-2 grid grid-cols-2 gap-2 sm:grid-cols-3">
-          <button className="btn" onClick={handleTap}>Tap +1</button>
- 
-        </div>
+    
+<div className="fixed inset-0 flex items-end justify-center pb-16">
+  <button
+    style={{
+      fontSize: "3rem",
+      padding: "2rem 5rem",
+      borderRadius: "2rem",
+      fontWeight: "bold",
+    }}
+    className="btn"
+    onClick={handleTap}
+  >
+    Tap +1
+  </button>
+</div>
+
 
         <p className="text-sm text-neutral-700">
           Current Mantra: <b>{mantra}</b> • Total: <b>{formatNumber(count)}</b> • Goal: <b>{formatNumber(GOAL)}</b>
