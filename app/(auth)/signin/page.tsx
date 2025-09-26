@@ -2,6 +2,8 @@
 import { useState } from "react";
 import { useSearchParams } from "next/navigation";
 
+export const dynamic = "force-dynamic";
+
 export default function SigninPage() {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
